@@ -100,15 +100,11 @@ const App = () => {
   };
 
   const onActivImg = i => {
-    console.log('🚀 ~ i:', i);
-    console.log('🚀 ~ ActivImg:', activImg);
-
     setActivImg(
       arrayImg.filter(img => {
         return img.id === i;
       })
     );
-    console.log('🚀 ~ setActivImg:', activImg);
   };
 
   return (
@@ -123,7 +119,9 @@ const App = () => {
       )}
       {status === 'loader' && <Loader />}
       {status === 'loadMore' && <Button onButton={onLoadMore} />}
-      {showModal && <Modal toggleModal={toggleModal} activeImage={activImg} />}
+      {showModal && (
+        <Modal toggleModal={toggleModal} activeImage={activImg[0]} />
+      )}
       {
         <ToastContainer
           position="top-center"

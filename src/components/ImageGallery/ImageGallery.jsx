@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const ImageGallery = ({ toggleModal, onActivImg, arrayImg }) => {
   return (
     <>
-      <ul className={css.ImageGallery} onClick={onActivImg}>
+      <ul className={css.ImageGallery}>
         {arrayImg.map(img => {
           const { id, webformatURL } = img;
           return (
